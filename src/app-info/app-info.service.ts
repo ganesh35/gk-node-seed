@@ -4,7 +4,6 @@ import { AppInfoDto } from './dto/app-info.dto';
 
 @Injectable()
 export class AppInfoService {
-
     getInfo(): AppInfoDto {
         const appInfo: AppInfoDto = {
             name: name,
