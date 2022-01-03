@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
-import { version,name, description,author } from 'package.json';
+
 import { AppInfoDto } from './dto/app-info.dto';
 
 @Injectable()
 export class AppInfoService {
-    getInfo(): AppInfoDto {
-        const appInfo: AppInfoDto = {
-            name: name,
-            description:description,
-            version:version,
-            author: author
-        }
-        return appInfo;
-    }
+  getInfo(): AppInfoDto {
+    const appInfo: AppInfoDto = {
+      name: process.env.npm_package_name,
+      description: process.env.npm_package_description,
+      version: process.env.npm_package_version,
+      author: process.env.npm_package_author,
+    };
+    return appInfo;
+  }
 }

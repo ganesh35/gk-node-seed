@@ -8,13 +8,13 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    AppInfoModule, 
+    AppInfoModule,
     AppHealthModule,
     ConfigModule.forRoot({
       isGlobal: true,
       expandVariables: true,
     }),
-    UsersModule
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
